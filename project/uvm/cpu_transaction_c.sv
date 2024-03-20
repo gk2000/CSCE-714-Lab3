@@ -31,10 +31,10 @@ class cpu_transaction_c extends uvm_sequence_item;
 
 //Lab3: TO DO: Add UVM macros for built in automation
     `uvm_object_utils_begin(cpu_transaction_c)
-        `uvm_field_int(data, UVM_NOCOMPARE)
-        `uvm_field_int(address, UVM_NOCOMPARE)
-        `uvm_field_enum (request_t, request_type, UVM_NOCOMPARE)
-        `uvm_field_enum (access_cache_t, access_cache_type, UVM_ALL_ON)
+        `uvm_field_int(data, UVM_NOCOMPARE) //Adding UVM_NOCOMPARE to remove miscompare
+        `uvm_field_int(address, UVM_NOCOMPARE) //Adding UVM_NOCOMPARE to remove miscompare
+        `uvm_field_enum (request_t, request_type, UVM_NOCOMPARE) //Adding UVM_NOCOMPARE to remove miscompare
+        `uvm_field_enum (access_cache_t, access_cache_type, UVM_ALL_ON) //Letting UVM_ALL_ON because it is not causing a miscompare
     `uvm_object_utils_end 
 
 //Constraints on class properties which will be randomized

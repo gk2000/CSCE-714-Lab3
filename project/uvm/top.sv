@@ -135,7 +135,7 @@ module top;
         //Lab3: TO DO: HOMEWORK_PART B
 
         //Create an object for trans1 and randomize it.
-        trans1 = new();
+        trans1 = new("trans1");
         //Transaction created message, whenever it is created
         `uvm_info("TOP", "Transaction trans1 created", UVM_HIGH)
         
@@ -149,7 +149,7 @@ module top;
         trans1.print();
 
         //Create an object for trans2 and randomize it.
-        trans2 = new();
+        trans2 = new("trans2");
         `uvm_info("TOP", "Transaction trans2 created", UVM_HIGH)
         
         if(trans2.randomize()==0) begin
@@ -161,7 +161,7 @@ module top;
         trans2.print(uvm_default_tree_printer);
 
         //Create an object for trans3, compare it with trans1
-        trans3 = new();
+        trans3 = new("trans3");
         `uvm_info("TOP", "Transaction trans3 created", UVM_HIGH)
         if(trans3.compare(trans1)) begin
             //Comparision Successful
@@ -169,7 +169,7 @@ module top;
         end
 
         //End of UVM test
-	    `uvm_info("TOP", "DONE", UVM_LOW)
+	    `uvm_info("TOP", "End of Test", UVM_LOW)
         $finish();
     end
 
